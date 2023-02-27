@@ -1,42 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Josefin+Sans:wght@400;700&family=Karla:wght@400;500;700&family=Poppins:wght@300;600&display=swap');
+
+:root {
+  /* ----- COLORS ----- */
+
+  /* ----- PRIMARY ----- */
+  --Bright-Blue: 220 98% 61%;
+  --Check-bg: linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+
+  /* ----- Light Theme ------ */
+  --Very-Light-Gray: 0 0% 98%;
+  --Very-Light-Gray-Blue: 236 33% 92%;
+  --Light-Gray-Blue: 233 11% 84%;
+  --Dark-Grayish-Blue: 236 9% 61%;
+  --Very-Dark-Grayish-Blue: 235 19% 35;
+
+  /* ------ Dark Theme ------ */
+  --Very-Dark-Blue: 235 21% 11%;
+  --Dark-Grayish-Blue: 234 11% 52%;
+  --Light-Grayish-Blue: 234 39% 85%;
+  --Very-Dark-Grayish-Blue: 233 14% 35%;
+  --Very-Dark-Grayish-Blue: 237 14% 26%;
+  --Very-Dark-Desaturated-Blue: 235 24% 19%;
+  --Light-Grayish-Blue-hover: 236 33% 92%;
+
+}
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  min-height: 100vh;
+  font-size: 1.8rem;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+header{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+    margin-inline: auto;
+    margin-block: 2rem;
+    padding-block: 1rem;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}

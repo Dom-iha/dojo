@@ -6,28 +6,15 @@
 
   <h2 align="center">Intro section with dropdown navigation solution</h2>
   <p align="center">
-    <a href="https://www.frontendmentor.io/solutions/intro-section-with-dropdown-navigation-tmQXOQU78e"><strong>Frontend Mentor Challenge</strong></a>
+    <a href="(https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW"><strong>Frontend Mentor Challenge</strong></a>
     <br />
     <br />
-    <a href="https://intro-section-with-dropdown-navigation-hdez.vercel.app/">View Demo</a>
+    <a href="#">View Demo</a>
     ·
-    <a href="https://github.com/MelvinAguilar/intro-section-with-dropdown-navigation/issues" target="_blank">Report Bug</a>
+    <a href="https://github.com/Dom-iha/Todo/issues" target="_blank">Report Bug</a>
     ·
-    <a href="https://github.com/MelvinAguilar/intro-section-with-dropdown-navigation/issues" target="_blank">Request Feature</a>
+    <a href="https://github.com/Dom-iha/Todo/issues" target="_blank">Request Feature</a>
   </p>
-</div>
-
-<!-- Bagdes -->
-<div align="center">
-  <!-- Profile -->
-  <a href="https://www.frontendmentor.io/profile/MelvinAguilar">
-    <img src="https://img.shields.io/badge/Profile-Melvin%20Aguilar-07043B?style=for-the-badge&logo=frontendmentor" alt="Melvin Profile">
-  </a>
-  <!-- Status -->
-    <a href="#">
-    <img src="https://img.shields.io/badge/Status-Completed-brightgreen?style=for-the-badge" alt="Status Completed">
-  </a>
-
 </div>
 
 #
@@ -38,12 +25,12 @@
 
 </div>
 
-This is a solution to the [Intro section with dropdown navigation challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/intro-section-with-dropdown-navigation-ryaPetHE5). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+This is a solution to the [Todo app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-<h2 align="center">Links</h2>
+<h2 align="center"></h2>
 
-- Solution URL: [Intro section with dropdown navigation (React + Tailwind + Dark mode) (React + SASS) | Frontend Mentor](https://www.frontendmentor.io/solutions/intro-section-with-dropdown-navigation-tmQXOQU78e)
-- Live Site URL: [https://intro-section-with-dropdown-navigation-hdez.vercel.app/](https://intro-section-with-dropdown-navigation-hdez.vercel.app/) 
+- Solution URL: []()
+- Live Site URL: []() 
 
 <br>
 
@@ -53,18 +40,26 @@ This is a solution to the [Intro section with dropdown navigation challenge on F
   - [The challenge](#the-challenge)
 - [My process](#my-process)
   - [Built with](#built-with)
+  - [Useful resources](#useful-resources)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
-
 ## Overview
 
 ### The challenge
 
 Users should be able to:
 
-- View the relevant dropdown menus on desktop and mobile when interacting with the navigation links
-- View the optimal layout for the content depending on their device's screen size
+- View the optimal layout for the app depending on their device's screen size
 - See hover states for all interactive elements on the page
+- Add new todos to the list
+- Mark todos as complete
+- Delete todos from the list
+- Filter by all/active/complete todos
+- Clear all completed todos
+- Toggle light and dark mode
+- **Bonus**: Drag and drop to reorder items on the list
+
+
 
 ## My process
 
@@ -72,42 +67,47 @@ Users should be able to:
 
 <!-- Bagdes -->
 
-![](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-[](https://img.shields.io/badge/Tailwind%20CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 
-- React
-- React Hooks (useState, useEffect)
-- Tailwind CSS
 - Semantic HTML5 markup
-- Flex Layout
+- [React](https://reactjs.org/) - JS library
+- React Hooks (useState, useEffect)
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
+
+
+## Author
+
+- Frontend Mentor - [@Domiha](//https://www.frontendmentor.io/profile/Dom-iha)
+- Github - [Taqib](https://github.com/Dom-iha)
+- Twitter - [@_Mihaq](https://www.twitter.com/_Mihaq)
 
 ### Useful resources
 
 - [React documentation](https://reactjs.org/)
-- [Forwarding Refs in React](https://reactjs.org/docs/forwarding-refs.html)
-- [Tailwind CSS](https://tailwindcss.com/)
-
-## Author
-
-- Frontend Mentor - [@melvinaguilar](https://www.frontendmentor.io/profile/melvinaguilar)
 
 ## Acknowledgments
 
-This project uses [yarn](https://classic.yarnpkg.com). If you do not have yarn, checkout installation steps [here](https://classic.yarnpkg.com/en/docs/install).
+This project uses [vite](https://vitejs.dev/). 
 
 To run the client, you need to run the following command:
 
 ```bash
-yarn
+with npm:
+  npm create vite@latest
+
+with yarn:
+  yarn create vite
 ```
 
 Then, you can run the client:
 
 ```bash
-yarn dev
+npm run dev
 ```
 
 ## Learn More
