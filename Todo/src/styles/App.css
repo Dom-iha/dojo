@@ -3,40 +3,59 @@
 
    /* ----- PRIMARY COLORS ----- */
    --White: 0 0% 100%;
-   --Bright-Blue: 220 98% 61%;
-   --Check-bg: linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
-
+   --Active: 220 98% 61%;
+   --Check: linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+   
    /* ----- Light Theme ------ */
-   --Very-Light-Gray: 0 0% 98%;
-   --Very-Light-Gray-Blue: 236 33% 92%;
-   --Light-Gray-Blue: 233 11% 84%;
-   --Dark-Grayish-Blue: 236 9% 61%;
-   --Very-Dark-Grayish-Blue: 235 19% 35;
+   --Main-bg: 0 0% 98%;
+   --Card-bg: 0 0% 100%;
+   --Border: 236 33% 92%;
+   --Box-shadow: 236 33% 92%;
+   --Fade: 233 11% 84%;
+   --Main-txt: 233 14% 35%;
+   --Alt-txt: 236 9% 61%;
+   --Black: 235 19% 35%;
+   --Focus: 280 87% 65%;
 
-   /* ------ Dark Theme ------ */
-   --Very-Dark-Blue: 235 21% 11%;
-   --Dark-Grayish-Blue: 234 11% 52%;
-   --Light-Grayish-Blue: 234 39% 85%;
-   --Very-Dark-Grayish-Blue: 233 14% 35%;
-   --Very-Dark-Grayish-Blue: 237 14% 26%;
-   --Very-Dark-Desaturated-Blue: 235 24% 19%;
-   --Light-Grayish-Blue-hover: 236 33% 92%;
-
+   /* ----- Images ----- */
+   --Mobile: url('../images/bg-mobile-light.jpg');
+   --Desktop: url('../images/bg-desktop-light.jpg');
 }
+
+:root:has(.toggle[data-dark="true"]){
+   
+   /* ------ Dark Theme ------ */
+   --Main-bg: 235 21% 11%;
+   --Card-bg: 235 24% 19%;
+   --Border: 237 14% 26%;
+   --Box-shadow: /* no box shadow needed for dark mode */;
+   --Fade: 233 14% 35%;
+   --Main-txt: 234 39% 85%;
+   --Alt-txt: 234 11% 52%;
+   --Hover: 236 33% 92%;
+   --Focus: 192 100% 67%;
+
+   /* ----- Images ----- */
+   --Mobile: url('../images/bg-mobile-dark.jpg');
+   --Desktop: url('../images/bg-desktop-dark.jpg');
+}
+
 #root {
+   overflow: auto;
    position: relative;
    min-height: 100vh;
    font-size: 1.6rem;
-   display: grid;
    padding-inline: 2.5rem;
+   display: grid;
    grid-template-rows: auto 1fr auto;
    font-family: 'Josefin Sans', sans-serif;
-   background-repeat: no-repeat;
-   background-color: hsl(var(--Very-Light-Gray));
-   background-image: url('../images/bg-mobile-light.jpg');
    background-size: contain;
-   overflow: auto;
+   background-repeat: no-repeat;
+   background-image: var(--Mobile);
+   background-color: hsl(var(--Main-bg));
+   transition: background-image 500ms ease;
 }
+
 @keyframes spin {
    from {
      transform: rotate(0deg);
@@ -67,44 +86,59 @@ header{
    height: 2.5rem;
    width: 2.5rem;
    display: flex;
+   align-items: center;
+   justify-content: center;
    background-image: url('../images/icon-moon.svg');
    background-size: contain;
    background-repeat: no-repeat;
    cursor: pointer;
-   transition: 1s ease-in-out;
+   transition: all 500ms ease-in-out;
 }
-.toggle:hover {
-   animation: spin 1s ease-in-out;
+
+.toggle[data-dark='true']{
+   animation: spin 500ms ease-in-out;
+   background-image: url('../images/icon-sun.svg');
 }
+.toggle[data-dark='false']{
+   background-image: url('../images/icon-moon.svg');
+   transform: rotate(-360deg);
+}
+
+
 .switch {
    margin: 0;
    appearance: none;
    border-radius: 50%;
    outline-offset: .5rem;
 }
-
-.switch:checked   .toggle{
-   animation: spin 1s ease-in-out;
-   background-image: url('../images/icon-sun.svg');
+.switch:focus-visible{
+   outline: .2rem solid hsl(var(--White));
+   outline-offset: 1.2rem;
 }
+
 
 
 /* ----------- Main Section ---------- */
 main {
+   position: relative;
    display: flex;
    flex-direction: column;
-   gap: 1.8rem;
+   gap: 2rem;
+   height: fit-content;
+   
 }
-
+button:focus-visible {
+   outline: .2rem solid hsl(var(--Focus));
+}
 .create-todo {
-   background-color: hsl(var(--White));
+   background-color: hsl(var(--Card-bg));
    border-radius: .5rem;
    padding: .5rem;
    display: grid;
    grid-template-columns: auto 1fr;
    gap: 2rem;
    align-items: center;
-   min-height: 4.8rem;
+   min-height: 5rem;
 }
 
 .input-task {
@@ -112,11 +146,12 @@ main {
    border: 0;
    outline: 0;
    font-size: 1.3rem;
-   color: hsl(var(--Very-Dark-Grayish-Blue));
+   color: hsl(var(--Main-txt));
+   background: inherit;
 }
 
 .input-task::placeholder {
-   color: hsl(var(--Dark-Grayish-Blue));
+   color: hsl(var(--Alt-txt));
    font-size: 1.3rem;
 }
 
@@ -135,31 +170,40 @@ main {
    border-bottom-color: hsl(280, 87%, 65%);
 }
 
+.add-btn:focus-visible{
+   border: none;
+   outline: 0;
+   background: linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
 .task-card {
-   box-shadow: 0 0 2rem .3rem hsl(var(--Light-Gray-Blue) / .5);
+   box-shadow: 0 0 1rem .3rem hsl(var(--Box-shadow));
    border-radius: .5rem;
-   background-color: hsl(var(--White));
+   background-color: hsl(var(--Card-bg));
 }
 
 .task-list {
    margin: 0;
    padding: 0;
-   list-style: none; 
+   list-style: none;
 }
 
 .task {
-   color: hsl(var(--Very-Dark-Grayish-Blue));
-   min-height: 4.8rem;
+   min-height: 5rem;
    padding: .5rem;
    font-size: 1.3rem;
    display: flex;
    align-items: center;
-   border-bottom: 1px solid hsl(var(--Very-Light-Gray-Blue));
+   border-bottom: 1px solid hsl(var(--Border));
+   
+}
+
+.text {
+   color: hsl(var(--Main-txt));
 }
 
 .done {
    appearance: none;
-   outline: 1px solid hsl(var(--Light-Grayish-Blue));
+   outline: 1px solid hsl(var(--Fade));
    width: 2rem;
    height: 2rem;
    border-radius: 50%;
@@ -167,10 +211,13 @@ main {
    cursor: pointer;
 }
 
+.done:focus-visible{
+   outline: .2rem solid hsl(var(--Focus));
+}
+
 .done:checked {
    background: linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
    outline: 0;
-   /* content: url('../images/icon-check.svg'); */
 }
 
 .wrap {
@@ -186,12 +233,10 @@ main {
 
 .wrap:hover .delete {
    opacity: 1;
-   animation: spin  900ms forwards;
 }
 
 .done::before{
    content: '';
-   /* content: url('../images/icon-check.svg'); */
    background: url('../images/icon-check.svg') no-repeat center;
    background-color: transparent;
    width: 2rem;
@@ -203,17 +248,35 @@ main {
    place-content: center;
 }
 
-
+.done:checked + .text{
+   color: hsl(var(--Fade));
+}
 .done:checked::before{
    opacity: 1; 
 }
+
+/* .done::after {
+   content: '';
+   width: 2rem;
+   height: 2rem;
+   position: absolute;
+   border-radius: 50%;
+   place-content: center;
+   background: transparent; 
+}
+.wrap:hover .done::after{
+   background: linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+} */
+
 
 .delete {
    background-color: transparent;
    border: none;
    cursor: pointer;
 }
-
+.delete:focus-visible{
+   opacity: 1;
+}
 .cross{
    height: 1.2rem;
    width: 1.2rem;
@@ -226,9 +289,9 @@ main {
    font-size: 1.3rem;
    padding-block: .5rem;
    padding-inline: 2rem;
-   color: hsl(var(--Dark-Grayish-Blue) / .8);
-   background-color: hsl(var(--White));
-   min-height: 4.8rem;
+   color: hsl(var(--Alt-txt) / .8);
+   background-color: hsl(var(--Card-bg));
+   min-height: 5rem;
    border-radius: .5rem;
 }
 
@@ -236,27 +299,35 @@ main {
    cursor: pointer;
    background-color: transparent;
    border: none;
-   color: hsl(var(--Dark-Grayish-Blue) / .8)
+   color: hsl(var(--Alt-txt) / .8)
 }
 
 .filter-tab {
    padding: .5rem;
    border-radius: .5rem;
-   gap: 3rem;
+   gap: 2rem;
    display: flex;
    justify-content: center;
    align-items: center;
-   background-color: hsl(var(--White));
-   box-shadow: 0 0 1rem .3rem hsl(var(--Light-Gray-Blue) / .4);
-   min-height: 4.8rem;
+   background-color: hsl(var(--Card-bg));
+   box-shadow: 0 0 1rem .3rem hsl(var(--Box-shadow));
+   min-height: 5rem;
+   position: absolute;
+   bottom: -6.8rem;
+   left: 0;
+   width: 100%;
 }
 
 .filter {
    font-size: 1.4rem;
-   color: hsl(var(--Dark-Grayish-Blue));
+   color: hsl(var(--Alt-txt));
    cursor: pointer;
    background: transparent;
    border: none;
+}
+.filter[active='true'] {
+   color: hsl(var(--Active));
+   font-weight: 700;
 }
 
 footer {
@@ -264,10 +335,9 @@ footer {
    justify-content: center;
    padding: 2rem;
    font-size: 1.3rem;
-   color: hsl(var(--Dark-Grayish-Blue));
+   color: hsl(var(--Alt-txt));
    margin-block: 3rem;
 }
-
 
 @media(min-width: 450px) {
    #root{
@@ -287,7 +357,7 @@ footer {
 }
 @media(min-width: 768px) {
    #root {
-      background-image: url('../images/bg-desktop-light.jpg');
+      background-image: var(--Desktop);
    }
    .title {
       font-size: 3.6rem;
@@ -333,5 +403,27 @@ footer {
       transform: scale(1);
       transition: scale 100ms ease;
    }
+   .filter-tab{
+      position: inherit;
+      box-shadow: none;
+      width: inherit;
+      background-color: inherit;
+      gap: 2rem;
 
+   }
+   .filter {
+      font-size: inherit;
+   }
+   .add-btn{
+      height: 2.2rem;
+      width: 2.2rem;
+   }
+   .done {
+      height: 2.2rem;
+      width: 2.2rem;
+   }
+   .done::before{
+      height: 2.2rem;
+      width: 2.2rem;
+   }
 }

@@ -10,13 +10,17 @@ function Tasks(props) {
     function isChecked() {
         console.log('completed')
     }
-
+    
     return (
         <ul className="task-list">
             <li className="task">
                 <label className='wrap'>
-                    <input type="checkbox" className="done" onChange={isChecked}/>
-                    <p>{props.task}</p>
+                    <input 
+                        type="checkbox" 
+                        className="done" 
+                        onChange={isChecked} 
+                    />
+                    <p className='text'>{props.task}</p>
                     <button onClick={remove} className='delete'>
                         <img src={cross} className='cross'/>
                         <span className='visually-hidden'>Delete item</span>

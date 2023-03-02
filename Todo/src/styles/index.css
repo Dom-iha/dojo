@@ -38,6 +38,7 @@ picture {
     margin: 0;
 }
 
+/* Avoid text overflows */
 h1,
 h2,
 h3,
@@ -46,6 +47,7 @@ h5,
 h6,
 p {
     font-weight: 400;
+    overflow-wrap: break-word;
 }
 
   /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
@@ -66,7 +68,8 @@ p {
 
 /* make images easier to work with */
 picture,
-img {
+img,
+svg {
     max-width: 100%;
     display: block;
 }

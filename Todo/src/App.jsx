@@ -5,10 +5,6 @@ import Main from './components/Main'
 import Footer from './components/Footer'
 
 function App() {
-   const [darkMode, setDarkMode] = useState(false);
-   function toggleTheme () {
-      setDarkMode(prevTheme => !prevTheme)
-   }
 
    return (
       <>
