@@ -7,7 +7,7 @@ function Filter (props) {
     
     return (
         <div className="summary-tab">
-            <span>{} items left</span>
+            <span>{`${props.itemsLeft} ${props.itemsLeft <= 1 ? 'item' : 'items'} left`}</span>
             
             <div className="filter-tab">
                 <button className="all filter"

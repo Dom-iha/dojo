@@ -1,57 +1,64 @@
 import { useEffect, useState } from "react"
+import {nanoid} from "nanoid"
 import Tasks from "./Todo"
 import Filter from "./Filter"
 import Form from "./Form"
 
 function Main() {   
-    const example =  [
-        { text: "Complete online JavaScript course", id: "i1", isChecked: false },
-        { text: "Jog around the park 3x", id: "i2", isChecked: false },
-        { text: "10 minutes meditation", id: "i3", isChecked: false },
-        { text: "Read for 1 hour", id: "i4", isChecked: false },
-        { text: "Pick up groceries", id: "i5", isChecked: false },
-        { text: "Complete Todo App on Frontend Mentor", id: "i6", isChecked: false },
-    ]
-        
+
+     // useEffect(() => {
+    //     localStorage.setItem('todo', JSON.stringify(todo))
+    // }, [todo])
+
     const [todo, setTodo] = useState (
         JSON.parse(localStorage.getItem('todo')) || [
-            { text: "Complete online JavaScript course", id: "i1", isChecked: false },
-            { text: "Jog around the park 3x", id: "i2", isChecked: false },
-            { text: "10 minutes meditation", id: "i3", isChecked: false },
-            { text: "Read for 1 hour", id: "i4", isChecked: false },
-            { text: "Pick up groceries", id: "i5", isChecked: false },
-            { text: "Complete Todo App on Frontend Mentor", id: "i6", isChecked: false },
+            { text: "Complete online JavaScript course", id: `task-${nanoid()}`, completed: false },
+            { text: "Jog around the park 3x", id: `task-${nanoid()}`, completed: false },
+            { text: "10 minutes meditation", id: `task-${nanoid()}`, completed: false },
+            { text: "Read for 1 hour", id: `task-${nanoid()}`, completed: false },
+            { text: "Pick up groceries", id: `task-${nanoid()}`, completed: false },
+            { text: "Complete Todo App on Frontend Mentor", id: `task-${nanoid()}`, completed: false },
         ]
     )
-        // useEffect(() => {
-            //     localStorage.setItem('todo', JSON.stringify(todo))
-            // }, [todo])
-
-    const taskList = example.map((item, index) => (
-        <Tasks task={item.text} key={index} />  
-    ))
-
-    function addItem(event) {
-        event.preventDefault()
-        const randomNum = Math.floor(Math.random() * 1000); 
         
-        setTodo(todo.map((item, index) => {
-            <Tasks key={index} task={item.text} />
-        }))
-
-        console.log('added item')
+    const [status, setStatus] = useState(false)     
+    
+    function toggleStatus(id) {
+        // const updatedTasks = todo.map((task) => {
+        //     // if this task has the same ID as the edited task
+        //     if (id === task.id) {
+        //       // use object spread to make a new object
+        //       // whose `completed` prop has been inverted
+        //       return {...prevTodo, completed: !task.completed}
+        //     }
+        //     return todo;
+        // });
+        // setTodo(updatedTasks); 
+        console.log(todo[0])
     }
 
+    // Callback prop to get input data from <Form />
+    function addItem(value) {
+        setTodo((prevTodo) => {
+            return [
+                {text: value, id: `task-${nanoid()}`, completed: false},
+                ...prevTodo
+            ];
+        })
+    }
 
+    const items = todo.map((task) => (
+        <Tasks key={task.id} task={task.text} isCompleted={toggleStatus}/>
+    ));
 
     return (
         <main>
-            <Form onSubmit={addItem}/>
+            <Form addItem={addItem}/>
             <section className="task-card">
+
+                {items}
     
-                {taskList}
-                     
-                <Filter />
+                <Filter itemsLeft={todo.length}/>
             </section>
         </main>
     )

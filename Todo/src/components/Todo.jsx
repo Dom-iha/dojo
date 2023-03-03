@@ -7,7 +7,7 @@ function Tasks(props) {
     function remove(){
         console.log('deleted')
     }
-    function isChecked() {
+    function isCompleted() {
         console.log('completed')
     }
     
@@ -18,7 +18,7 @@ function Tasks(props) {
                     <input 
                         type="checkbox" 
                         className="done" 
-                        onChange={isChecked} 
+                        onChange={() => props.isCompleted(props.id)}
                     />
                     <p className='text'>{props.task}</p>
                     <button onClick={remove} className='delete'>

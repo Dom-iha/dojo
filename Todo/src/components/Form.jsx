@@ -2,32 +2,23 @@ import { useState } from "react";
 
 function Form(props) {
     
-    // const [todo, setTodo] = useState (
-    //     JSON.parse(localStorage.getItem('todo')) || [
-    //         { text: "Complete online JavaScript course", id: "i1", isChecked: false },
-    //         { text: "Jog around the park 3x", id: "i2", isChecked: false },
-    //         { text: "10 minutes meditation", id: "i3", isChecked: false },
-    //         { text: "Read for 1 hour", id: "i4", isChecked: false },
-    //         { text: "Pick up groceries", id: "i5", isChecked: false },
-    //     ]
-    //     )
-    //     // useEffect(() => {
-    //     //     localStorage.setItem('todo', JSON.stringify(todo))
-    //     // }, [todo])
-            
-    //     function addItem(event) {
-    //         event.preventDefault()
-    //         const randomNum = Math.floor(Math.random() * 1000); 
-            
-    //         // setTodo(todo.map((item) => {
-    //         //     <Tasks key={randomNum} text={todo.text} />
-    //         // }))
-    
-    //         console.log(todo)
-    //     }
+    const [value, setValue] = useState('');
 
+    const handleChange = (e) => {
+        setValue(e.target.value)
+    };
+
+    const handleSubmit= (e) => {
+        e.preventDefault();
+        if(!value){return}
+        // pass input value to <Main />
+        props.addItem(value)
+        setValue('')
+        console.log(`New-task: ${value}`)
+    };
+    
     return (
-        <form className="create-todo" onSubmit={props.onSubmit}>
+        <form className="create-todo" onSubmit={handleSubmit}>
             <label className="add flex">
                 <button className="add-btn">
                     <span className="visually-hidden">Click to add task</span>
@@ -35,10 +26,13 @@ function Form(props) {
             </label>
             <label>
                 <input 
+                    name="taskInput"
+                    autoFocus
                     className="input-task"
                     type="text"
                     placeholder="Create a new todo..."
-                    
+                    value={value}
+                    onChange={handleChange}
                 />
             </label>
         </form>
