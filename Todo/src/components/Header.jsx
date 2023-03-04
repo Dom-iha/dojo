@@ -10,6 +10,7 @@ function Header() {
 
     // check user theme preference
     useEffect(() => {
+        
         const prefersDark = window.matchMedia(
             '(prefers-color-scheme: dark)'
         ).matches;

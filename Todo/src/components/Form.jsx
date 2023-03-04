@@ -26,13 +26,14 @@ function Form(props) {
             </label>
             <label>
                 <input 
-                    name="taskInput"
                     autoFocus
-                    className="input-task"
                     type="text"
-                    placeholder="Create a new todo..."
+                    name="taskInput"
+                    className="input-task"
+                    autoComplete="off"
                     value={value}
                     onChange={handleChange}
+                    placeholder="Create a new todo..."
                 />
             </label>
         </form>

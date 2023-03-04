@@ -12,19 +12,23 @@ function Filter (props) {
             <div className="filter-tab">
                 <button className="all filter"
                         active='true' 
-                        onClick={props.filter}>All
+                        onClick={props.filter}
+                >       All
                 </button> 
                 <button className="active filter" 
-                        onClick={props.filter}>Active
+                        onClick={props.filter}
+                        active='false' 
+                >       Active
                 </button> 
                 <button className="completed filter" 
-                        onClick={props.filter}>Completed
+                        onClick={props.filter}
+                        active='false'
+                >       Completed
                 </button>
             </div>
 
-            <button 
-                className="clear"
-                onClick={clearCompleted}>Clear Completed
+            <button className="clear" onClick={clearCompleted}>
+                Clear Completed
             </button>
         </div> 
     )

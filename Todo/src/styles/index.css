@@ -103,7 +103,7 @@ body {
     text-rendering: optimizeSpeed;
     font-size: 1.6rem;
     font-family: var(--ff-josefin);
-    
+    background-color: hsl(var(--Main-bg));
 }
 
 h1,
@@ -128,10 +128,4 @@ h3 {
 .flex{
   display: flex;
 }
-/* @media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  
-} */
+
