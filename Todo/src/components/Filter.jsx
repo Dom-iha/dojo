@@ -1,9 +1,6 @@
 
 function Filter (props) {
 
-    function clearCompleted() {
-        console.log('cleared')
-    }
     
     return (
         <div className="summary-tab">
@@ -11,23 +8,23 @@ function Filter (props) {
             
             <div className="filter-tab">
                 <button className="all filter"
-                        active='true' 
-                        onClick={props.filter}
+                        active={`${props.filter === 'all' ? 'true' : 'false'}`} 
+                        onClick={() => props.handleFilterChange('all')}
                 >       All
                 </button> 
                 <button className="active filter" 
-                        onClick={props.filter}
-                        active='false' 
+                        onClick={() => props.handleFilterChange('active')}
+                        active={`${props.filter === 'active' ? 'true' : 'false'}`} 
                 >       Active
                 </button> 
                 <button className="completed filter" 
-                        onClick={props.filter}
-                        active='false'
+                        onClick={() => props.handleFilterChange('completed')}
+                        active={`${props.filter === 'completed' ? 'true' : 'false'}`} 
                 >       Completed
                 </button>
             </div>
 
-            <button className="clear" onClick={clearCompleted}>
+            <button className="clear" onClick={props.clearCompleted}>
                 Clear Completed
             </button>
         </div> 

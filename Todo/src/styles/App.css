@@ -128,12 +128,19 @@ main {
    
 }
 main *{
-   transition: background 500ms ease;
+   transition: 
+      background 500ms ease,
+      border 500ms ease,
+      outline 500ms ease,
+      color 500ms ease,
+      ;
    
 }
+
 button:focus-visible {
    outline: .2rem solid hsl(var(--Focus));
 }
+
 .create-todo {
    background-color: hsl(var(--Card-bg));
    border-radius: .5rem;
@@ -254,7 +261,9 @@ button:focus-visible {
 
 .done:checked + .text{
    color: hsl(var(--Fade));
+   text-decoration: line-through;
 }
+
 .done:checked::before{
    opacity: 1; 
 }

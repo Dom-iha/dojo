@@ -14,7 +14,7 @@ function Form(props) {
         // pass input value to <Main />
         props.addItem(value)
         setValue('')
-        console.log(`New-task: ${value}`)
+        console.log(`New Task: ${value}`)
     };
     
     return (

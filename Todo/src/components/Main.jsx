@@ -5,14 +5,6 @@ import Filter from "./Filter"
 import Form from "./Form"
 
 
-const FILTER_MAP = {
-    All: () => true,
-    Active: (task) => !task.completed,
-    Completed: (task) => task.completed
-};
-
-const FILTER_NAMES = Object.keys(FILTER_MAP);
-
 function Main() {   
 
     const [todo, setTodo] = useState (
@@ -53,14 +45,39 @@ function Main() {
 
     // filter and exclude item whose id matches the id parameter recieved from <Task />
     function deleteItem(id) {
-        console.log(id)
         const remainingItems = todo.filter((task) => id !== task.id)
         setTodo(remainingItems);
     }
     
-    const [filter, setFilter] = useState('All');
+    function clearCompleted() {
+        console.log('cleared')
+        const updatedList = todo.filter((task) =>  !task.completed)
+        setTodo(updatedList)
+    }
 
-    const items = todo.map((task) => (
+    const [filter, setFilter] = useState('all');
+    // callback prop to get new filter value from <Filter />
+    function handleFilterChange(newFilter) {
+        setFilter(newFilter);
+    }
+
+    // display items based on current filter selection
+    const todosToShow = todo.filter(task => {
+        if (filter === 'all') {
+            return true;
+        } 
+        else if (filter === 'active') {
+            return !task.completed;
+        } 
+        else if (filter === 'completed') {
+            return task.completed;
+        }
+    });
+
+    
+    // instead of mapping through todo im using the todosToshow 
+    // to conditionaly display the selected filter tab 
+    const items = todosToShow.map((task) => (
         <Tasks
             key={task.id} 
             id={task.id}  
@@ -71,18 +88,18 @@ function Main() {
         />
     ));
 
-    const filterTab = FILTER_NAMES.map((name) => (
-        <Filter key={name} name={name} itemsLeft={todo.length}/>
-    ));
 
     return (
         <main>
             <Form addItem={addItem}/>
+
             <section className="task-card">
 
-                {items}
-    
-                <Filter itemsLeft={todo.length} />
+                <ul className="task-list">
+                    {items}
+                </ul>
+        
+                <Filter filter={filter} itemsLeft={todo.length} handleFilterChange={handleFilterChange} clearCompleted={clearCompleted}/>
             </section>
         </main>
     )
