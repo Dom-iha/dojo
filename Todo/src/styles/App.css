@@ -57,6 +57,15 @@
    transition: background 500ms ease;
 }
 
+/* .app{
+   position: absolute;
+   width: 100%;
+   margin-inline: auto;
+   display: grid;
+   justify-content: center;
+   padding-inline: 2.5rem;
+} */
+
 @keyframes spin {
    from {
      transform: rotate(0deg);
@@ -128,13 +137,7 @@ main {
    
 }
 main *{
-   transition: 
-      background 500ms ease,
-      border 500ms ease,
-      outline 500ms ease,
-      color 500ms ease,
-      ;
-   
+   transition: background 500ms ease;
 }
 
 button:focus-visible {
@@ -167,18 +170,46 @@ button:focus-visible {
 }
 
 .add-btn {
+   padding: 0;
    width: 2rem;
    height: 2rem;
-   border-radius: 50%;
-   border: .1rem solid; 
-   background-color: transparent;
    cursor: pointer;
+   position: relative;
    margin-left: 1rem;
-   padding: 0;
-   border-top-color: hsl(192, 100%, 67% );
-   border-left-color: hsl(192, 100%, 67%);
-   border-right-color: hsl(280, 87%, 65%);
-   border-bottom-color: hsl(280, 87%, 65%);
+   border-radius: 50%;
+   background-color: transparent;
+   border: .1rem solid hsl(var(--Fade));
+}
+
+.add-btn:hover {
+   border-top: solid .1rem hsl(192, 100%, 70%);
+   border-left: solid .1rem hsl(192, 100%, 70%);
+   border-right: solid .1rem hsl(280, 87%, 80%);
+   border-bottom: solid .1rem hsl(280, 87%, 80%);
+}
+
+.add-btn::before{
+   position: absolute;
+   content: 'click to add';
+   background-color: hsl(var(--Main-bg));
+   padding: 1rem;
+   color: hsl(var(--Main-txt));
+   border-radius: 5px;
+   font-size: 1.2rem;
+   bottom: 0;
+   left: -3rem;
+   white-space: nowrap;
+   transform: scale(0);
+   transition: 
+      transform ease-out 150ms,
+      bottom ease-out 150ms
+      ;
+   box-shadow: 0 0 1rem .2rem rgba(var(--Shadow) / .1);
+}
+
+.add-btn:hover::before {
+   transform: scale(1);
+   bottom: 110%;
 }
 
 .add-btn:focus-visible{
@@ -205,11 +236,12 @@ button:focus-visible {
    display: flex;
    align-items: center;
    border-bottom: 1px solid hsl(var(--Border));
-   
+   transition: border 500ms ease;
 }
 
 .text {
    color: hsl(var(--Main-txt));
+   transition: color 500ms ease;
 }
 
 .done {
@@ -222,13 +254,29 @@ button:focus-visible {
    cursor: pointer;
 }
 
+.done:hover {
+   border-top: solid .1rem hsl(192, 100%, 70%);
+   border-left: solid .1rem hsl(192, 100%, 70%);
+   border-right: solid .1rem hsl(280, 87%, 80%);
+   border-bottom: solid .1rem hsl(280, 87%, 80%);
+   outline: 0;
+}
+
 .done:focus-visible{
    outline: .2rem solid hsl(var(--Focus));
 }
 
 .done:checked {
-   background: linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+   background: url('../images/icon-check.svg'),
+      linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+   background-repeat: no-repeat;
+   background-position: center;
    outline: 0;
+}
+
+.done:checked + .text{
+   color: hsl(var(--Fade));
+   text-decoration: line-through;
 }
 
 .wrap {
@@ -246,6 +294,7 @@ button:focus-visible {
    opacity: 1;
 }
 
+
 .done::before{
    content: '';
    background: url('../images/icon-check.svg') no-repeat center;
@@ -258,29 +307,6 @@ button:focus-visible {
    display: grid;
    place-content: center;
 }
-
-.done:checked + .text{
-   color: hsl(var(--Fade));
-   text-decoration: line-through;
-}
-
-.done:checked::before{
-   opacity: 1; 
-}
-
-/* .done::after {
-   content: '';
-   width: 2rem;
-   height: 2rem;
-   position: absolute;
-   border-radius: 50%;
-   place-content: center;
-   background: transparent; 
-}
-.wrap:hover .done::after{
-   background: linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
-} */
-
 
 .delete {
    background-color: transparent;
@@ -329,9 +355,9 @@ button:focus-visible {
    box-shadow: 0 0 1rem .2rem rgba(var(--Shadow) / .1);
    min-height: 5rem;
    position: absolute;
-   bottom: -6.8rem;
+   top: 104%;
    left: 0;
-   width: 100%;
+   width: 100%; 
 }
 
 .filter:hover{
@@ -356,7 +382,8 @@ footer {
    padding: 2rem;
    font-size: 1.3rem;
    color: hsl(var(--Alt-txt));
-   margin-block: 3rem;
+   margin-top: 10rem;
+   margin-bottom: 3rem;
 }
 
 @media(min-width: 450px) {
@@ -379,6 +406,7 @@ footer {
    #root {
       background-image: var(--Desktop);
    }
+   
    .title {
       font-size: 3.6rem;
    }
@@ -429,7 +457,7 @@ footer {
       width: inherit;
       background-color: inherit;
       gap: 2rem;
-
+      transition: color 500ms ease;
    }
    .filter {
       font-size: inherit;
@@ -442,8 +470,7 @@ footer {
       height: 2.2rem;
       width: 2.2rem;
    }
-   .done::before{
-      height: 2.2rem;
-      width: 2.2rem;
+   footer {
+      margin-block: 3rem;
    }
 }
