@@ -4,7 +4,7 @@
 
   <img src="https://www.frontendmentor.io/static/images/logo-mobile.svg" alt="frontendmentor" width="80">
 
-  <h2 align="center">Intro section with dropdown navigation solution</h2>
+  <h2 align="center">Todo app solution</h2>
   <p align="center">
     <a href="(https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW"><strong>Frontend Mentor Challenge</strong></a>
     <br />
@@ -21,7 +21,7 @@
 
 <div align="center">
 
-![](./design/desktop-preview.jpg)
+![](./design/desktop-design-dark.jpg)
 
 </div>
 
@@ -65,13 +65,6 @@ Users should be able to:
 
 ### Built with
 
-<!-- Bagdes -->
-
-![](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-
 - Semantic HTML5 markup
 - [React](https://reactjs.org/) - JS library
 - React Hooks (useState, useEffect)
@@ -89,12 +82,13 @@ Users should be able to:
 ### Useful resources
 
 - [React documentation](https://reactjs.org/)
+- [React beautiful dnd](https://egghead.io/courses/beautiful-and-accessible-drag-and-drop-with-react-beautiful-dnd)
 
 ## Acknowledgments
 
 This project uses [vite](https://vitejs.dev/). 
 
-To run the client, you need to run the following command:
+To get started, you need to run the following command:
 
 ```bash
 with npm:
@@ -112,6 +106,6 @@ npm run dev
 
 ## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Get started with React, from the [React documentation](https://reactjs.org/).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To learn more about Beautiful dnd, check out the [React beautiful dnd](https://github.com/atlassian/react-beautiful-dnd) Repository.
