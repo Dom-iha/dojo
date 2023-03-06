@@ -238,6 +238,12 @@ button:focus-visible {
    border-bottom: 1px solid hsl(var(--Border));
    transition: border 500ms ease;
 }
+/* just to make sure todo items are not transparent on drag */
+/* .task:active{
+   background-color: hsl(var(--Card-bg));
+   box-shadow: 0 0 1rem .2rem rgba(var(--Focus) );
+   border-radius: .5rem;
+} */
 
 .text {
    color: hsl(var(--Main-txt));
@@ -272,6 +278,7 @@ button:focus-visible {
    background-repeat: no-repeat;
    background-position: center;
    outline: 0;
+   transition: background 0ms;
 }
 
 .done:checked + .text{
@@ -280,7 +287,7 @@ button:focus-visible {
 }
 
 .wrap {
-   cursor: pointer;
+   /* cursor: pointer; */
    display: grid;
    grid-template-columns: auto 1fr auto;
    width: 100%;
@@ -294,20 +301,6 @@ button:focus-visible {
    opacity: 1;
 }
 
-
-.done::before{
-   content: '';
-   background: url('../images/icon-check.svg') no-repeat center;
-   background-color: transparent;
-   width: 2rem;
-   height: 2rem;
-   position: absolute;
-   border-radius: 50%;
-   opacity: 0;
-   display: grid;
-   place-content: center;
-}
-
 .delete {
    background-color: transparent;
    border: none;
@@ -315,6 +308,7 @@ button:focus-visible {
 }
 .delete:focus-visible{
    opacity: 1;
+   outline-offset: .5rem;
 }
 .cross{
    height: 1.2rem;

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd'
 import {nanoid} from "nanoid"
 import Tasks from "./Todo"
 import Filter from "./Filter"
@@ -75,32 +76,53 @@ function Main() {
     });
 
     
-    // instead of mapping through todo im using the todosToshow 
+    // instead of mapping through [todo] im using the todosToshow 
     // to conditionaly display the selected filter tab 
-    const items = todosToShow.map((task) => (
+    const items = todosToShow.map((task, index) => (
         <Tasks
             key={task.id} 
-            id={task.id}  
+            id={task.id} 
+            index={index} 
             task={task.text} 
             completed={task.completed} 
             toggleStatus={toggleStatus}
             deleteItem={deleteItem}
-        />
+        />          
     ));
-
+    
+    function onDragEnd(result) {
+        if (!result.destination){return;}
+    
+        const newTodo = Array.from(todo);
+        const [movedTask] = newTodo.splice(result.source.index, 1);
+        newTodo.splice(result.destination.index, 0, movedTask);
+    
+        setTodo(newTodo);
+    }
 
     return (
         <main>
             <Form addItem={addItem}/>
 
-            <section className="task-card">
+            <DragDropContext onDragEnd={onDragEnd}>
+                <section className="task-card">
+                    <Droppable droppableId={`task-${todosToShow.id}`}>
+                        {(provided) => (
+                            <ul className="task-list" {...provided.droppableProps} ref={provided.innerRef} >
+                                {items}
+                                {provided.placeholder}
+                            </ul>
+                        )}
+                    </Droppable>
+                    <Filter 
+                        filter={filter} 
+                        itemsLeft={todo.length} 
+                        clearCompleted={clearCompleted}
+                        handleFilterChange={handleFilterChange} 
+                    />
+                </section>
+            </DragDropContext>
 
-                <ul className="task-list">
-                    {items}
-                </ul>
-        
-                <Filter filter={filter} itemsLeft={todo.length} handleFilterChange={handleFilterChange} clearCompleted={clearCompleted}/>
-            </section>
         </main>
     )
 }
