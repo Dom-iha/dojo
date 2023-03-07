@@ -8,12 +8,6 @@
   <p align="center">
     <a href="(https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW"><strong>Frontend Mentor Challenge</strong></a>
     <br />
-    <br />
-    <a href="#">View Demo</a>
-    ·
-    <a href="https://github.com/Dom-iha/Todo/issues" target="_blank">Report Bug</a>
-    ·
-    <a href="https://github.com/Dom-iha/Todo/issues" target="_blank">Request Feature</a>
   </p>
 </div>
 
@@ -29,8 +23,7 @@ This is a solution to the [Todo app challenge on Frontend Mentor](https://www.fr
 
 <h2 align="center"></h2>
 
-- Solution URL: []()
-- Live Site URL: []() 
+- Live Site URL: [URL](https://todo-tau-sable.vercel.app/) 
 
 <br>
 
@@ -116,10 +109,6 @@ with npm:
 with yarn:
   yarn add react-beautiful-dnd
 ```
-
-Then, you can run the client:
-
-```bash 
 
 ## Learn More
 
