@@ -219,7 +219,7 @@ button:focus-visible {
    background: linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
 }
 .task-card {
-   box-shadow: 0 0 1rem .2rem rgba(var(--Shadow) / .1);
+   box-shadow: 0 0 3rem .2rem rgba(var(--Shadow) / .1);
    border-radius: .5rem;
    background-color: hsl(var(--Card-bg));
 }
