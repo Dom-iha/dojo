@@ -22,8 +22,8 @@ function Header() {
     return (
         <header>
             <h1 className="title">Todo</h1>
-            <label className="toggle" data-dark={darkMode}>
-                <input onChange={toggleTheme} type="checkbox" className="switch"/>
+            <label className="toggle" data-dark={darkMode} htmlFor="themeSwitch">
+                <input id="themeSwitch" onChange={toggleTheme} type="checkbox" className="switch"/>
             </label>
         </header>
     )

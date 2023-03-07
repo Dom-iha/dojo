@@ -42,9 +42,9 @@
 }
 
 #root {
-   overflow: auto;
    position: relative;
    min-height: 100vh;
+   min-height: 100dvh;
    font-size: 1.6rem;
    padding-inline: 2.5rem;
    display: grid;
@@ -57,14 +57,6 @@
    transition: background 500ms ease;
 }
 
-/* .app{
-   position: absolute;
-   width: 100%;
-   margin-inline: auto;
-   display: grid;
-   justify-content: center;
-   padding-inline: 2.5rem;
-} */
 
 @keyframes spin {
    from {
@@ -79,10 +71,8 @@
 header{
    display: grid;
    grid-template-columns: 1fr auto;
-   gap: .5rem;
    align-items: center;
-   margin-top: 4rem;
-   margin-bottom: 3rem;
+   margin-block: 3rem;
 }
 
 .title {
@@ -231,7 +221,7 @@ button:focus-visible {
 }
 .dragging {
    background-color: hsl(var(--Focus));
-   border: none;
+   border: 0;
    border-radius: 1rem;
 }
 .task {
@@ -351,7 +341,7 @@ button:focus-visible {
    box-shadow: 0 0 1rem .2rem rgba(var(--Shadow) / .1);
    min-height: 5rem;
    position: absolute;
-   top: 104%;
+   bottom: -7.5rem;
    left: 0;
    width: 100%; 
 }
@@ -367,7 +357,7 @@ button:focus-visible {
    border: none;
    padding: .2rem;
 }
-.filter[active='true'] {
+.filter[data-active='true'] {
    color: hsl(var(--Active));
    font-weight: 700;
 }
@@ -379,7 +369,7 @@ footer {
    font-size: 1.3rem;
    color: hsl(var(--Alt-txt));
    margin-top: 10rem;
-   margin-bottom: 3rem;
+   margin-bottom: 2rem;
 }
 
 @media(min-width: 450px) {

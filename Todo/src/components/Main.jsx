@@ -105,7 +105,7 @@ function Main() {
             <Form addItem={addItem}/>
 
             <DragDropContext onDragEnd={onDragEnd}>
-                <section className="task-card">
+                <div className="task-card">
                     <Droppable droppableId='droppable'>
                         {(provided) => (
                             <ul className="task-list" {...provided.droppableProps} ref={provided.innerRef} >
@@ -120,7 +120,7 @@ function Main() {
                         clearCompleted={clearCompleted}
                         handleFilterChange={handleFilterChange} 
                     />
-                </section>
+                </div>
             </DragDropContext>
 
         </main>

@@ -10,8 +10,7 @@ function Tasks(props) {
                     className={`task ${snapshot.isDragging ? "dragging" : ""}`}
                     ref={provided.innerRef} 
                     {...provided.draggableProps} 
-                    {...provided.dragHandleProps}
-                    // style={snapshot.isDragging ? {backgroundColor: 'hsl(var(--Focus))'} : {}}      
+                    {...provided.dragHandleProps}      
                 >
                     <label className='wrap'>
                         <input 
@@ -23,7 +22,7 @@ function Tasks(props) {
                         />
                         <p className='text'>{props.task}</p>
                         <button onClick={() => props.deleteItem(props.id)} className='delete'>
-                            <img src={cross} className='cross'/>
+                            <img src={cross} className='cross' alt='delete icon'/>
                             <span className='visually-hidden'>Delete item</span>
                         </button>
                     </label>

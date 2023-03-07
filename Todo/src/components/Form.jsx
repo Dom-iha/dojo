@@ -18,12 +18,10 @@ function Form(props) {
     };
     
     return (
-        <form className="create-todo" onSubmit={handleSubmit}>
-            <label className="add flex">
+        <form className="create-todo" onSubmit={handleSubmit}>           
                 <button className="add-btn">
                     <span className="visually-hidden">Click to add task</span>
                 </button>
-            </label>
             <label>
                 <input 
                     autoFocus
