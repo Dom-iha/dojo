@@ -10,10 +10,6 @@
     <br />
     <br />
     <a href="https://todo-tau-sable.vercel.app/">View Site</a>
-    ·
-    <a href="https://github.com/Dom-iha/Todo/issues" target="_blank">Report Bug</a>
-    ·
-    <a href="https://github.com/Dom-iha/Todo/issues" target="_blank">Request Feature</a>
   </p>
 </div>
 
