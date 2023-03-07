@@ -21,7 +21,7 @@
 
 <div align="center">
 
-![](./design/desktop-design-dark.jpg)
+![](./design/desktop-preview.jpg)
 
 </div>
 
@@ -71,7 +71,7 @@ Users should be able to:
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-
+- [vite](https://vitejs.dev/)
 
 ## Author
 
@@ -82,13 +82,14 @@ Users should be able to:
 ### Useful resources
 
 - [React documentation](https://reactjs.org/)
-- [React beautiful dnd](https://egghead.io/courses/beautiful-and-accessible-drag-and-drop-with-react-beautiful-dnd)
+- [React beautiful dnd](https://www.freecodecamp.org/news/how-to-add-drag-and-drop-in-react-with-react-beautiful-dnd/)
+- [MDN web docs: Getting started with react](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/React_getting_started)
 
 ## Acknowledgments
 
-This project uses [vite](https://vitejs.dev/). 
+- [vite](https://vitejs.dev/). 
 
-To get started, you need to run the following command:
+To get started, Run the following command:
 
 ```bash
 with npm:
@@ -103,6 +104,22 @@ Then, you can run the client:
 ```bash
 npm run dev
 ```
+
+- [React beautiful dnd](https://egghead.io/courses/beautiful-and-accessible-drag-and-drop-with-react-beautiful-dnd)
+
+To add the package, Run the following command:
+
+```bash
+with npm:
+  npm install react-beautiful-dnd --save
+
+with yarn:
+  yarn add react-beautiful-dnd
+```
+
+Then, you can run the client:
+
+```bash 
 
 ## Learn More
 

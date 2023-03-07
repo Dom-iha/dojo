@@ -179,6 +179,7 @@ button:focus-visible {
    border-radius: 50%;
    background-color: transparent;
    border: .1rem solid hsl(var(--Fade));
+   transition: border 500ms ease;
 }
 
 .add-btn:hover {
@@ -228,7 +229,11 @@ button:focus-visible {
    padding: 0;
    list-style: none;
 }
-
+.dragging {
+   background-color: hsl(var(--Focus));
+   border: none;
+   border-radius: 1rem;
+}
 .task {
    min-height: 5rem;
    padding: .5rem;

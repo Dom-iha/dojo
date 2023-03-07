@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd'
+import { DragDropContext, Droppable } from 'react-beautiful-dnd'
 import {nanoid} from "nanoid"
 import Tasks from "./Todo"
 import Filter from "./Filter"
@@ -15,7 +15,7 @@ function Main() {
             { text: "10 minutes meditation", id: `task-${nanoid()}`, completed: false },
             { text: "Read for 1 hour", id: `task-${nanoid()}`, completed: false },
             { text: "Pick up groceries", id: `task-${nanoid()}`, completed: false },
-            { text: "Complete Todo App on Frontend Mentor", id: `task-${nanoid()}`, completed: false },
+            { text: "Complete Todo App", id: `task-${nanoid()}`, completed: false },
         ]
     )
              
@@ -106,7 +106,7 @@ function Main() {
 
             <DragDropContext onDragEnd={onDragEnd}>
                 <section className="task-card">
-                    <Droppable droppableId={`task-${todosToShow.id}`}>
+                    <Droppable droppableId='droppable'>
                         {(provided) => (
                             <ul className="task-list" {...provided.droppableProps} ref={provided.innerRef} >
                                 {items}

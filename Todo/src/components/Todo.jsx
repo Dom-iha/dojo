@@ -1,17 +1,17 @@
-import { useState } from 'react'
 import cross from '../images/icon-cross.svg'
 import { Draggable } from 'react-beautiful-dnd'
 
 
 function Tasks(props) {
     return (
-        <Draggable draggableId={props.id} index={props.index}>
-            {(provided) => (
+        <Draggable key={props.id} draggableId={props.id} index={props.index}>
+            {(provided, snapshot) => (
                 <li 
-                    className="task" 
+                    className={`task ${snapshot.isDragging ? "dragging" : ""}`}
                     ref={provided.innerRef} 
                     {...provided.draggableProps} 
                     {...provided.dragHandleProps}
+                    // style={snapshot.isDragging ? {backgroundColor: 'hsl(var(--Focus))'} : {}}      
                 >
                     <label className='wrap'>
                         <input 
