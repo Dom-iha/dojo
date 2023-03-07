@@ -113,8 +113,6 @@ with yarn:
   yarn add react-beautiful-dnd
 ```
 
-```bash 
-
 ## Learn More
 
 Get started with React, from the [React documentation](https://reactjs.org/).
