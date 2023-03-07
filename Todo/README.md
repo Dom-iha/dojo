@@ -8,8 +8,6 @@
   <p align="center">
     <a href="(https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW"><strong>Frontend Mentor Challenge</strong></a>
     <br />
-    <br />
-    <a href="https://todo-tau-sable.vercel.app/">View Site</a>
   </p>
 </div>
 
@@ -25,8 +23,7 @@ This is a solution to the [Todo app challenge on Frontend Mentor](https://www.fr
 
 <h2 align="center"></h2>
 
-- Solution URL: []()
-- Live Site URL: [Site](https://todo-tau-sable.vercel.app/) 
+- Live Site URL: [URL](https://todo-tau-sable.vercel.app/) 
 
 <br>
 
