@@ -1,0 +1,12 @@
+@use "../utils" as u;
+
+body {
+   line-height: 1.5;
+   min-height: 100vh;
+   overflow-x: hidden;
+   text-rendering: optimizeSpeed;
+   font-size: 1.6rem;
+   font-family: var(--ff-josefin);
+   background-color: #242424; 
+   // color: hsl(0 0% 100%);
+}
