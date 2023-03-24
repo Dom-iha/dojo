@@ -7,7 +7,7 @@
     <br />
   </p>
 </div>
-<div align="center">
+
 
 # Frontend Mentor - Crowdfunding product page solution
 
