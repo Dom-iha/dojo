@@ -1,7 +1,7 @@
 <div align="center">
   <img src="https://www.frontendmentor.io/static/images/logo-mobile.svg" alt="frontendmentor" width="80">
 
-  <h2 align="center">Todo app solution</h2>
+  <h2 align="center">Crowdfunding product page solution</h2>
   <p align="center">
     <a href="(https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW"><strong>Frontend Mentor Challenge</strong></a>
     <br />
