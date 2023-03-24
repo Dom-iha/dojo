@@ -1,4 +1,4 @@
-import cross from '../images/icon-cross.svg'
+import cross from '../assets/icon-cross.svg'
 import { Draggable } from 'react-beautiful-dnd'
 
 

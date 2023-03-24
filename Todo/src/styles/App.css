@@ -19,8 +19,8 @@
    --Focus: 280 87% 65%;
 
    /* ----- Images ----- */
-   --Mobile: url('../images/bg-mobile-light.jpg');
-   --Desktop: url('../images/bg-desktop-light.jpg');
+   --Mobile: url('../assets/bg-mobile-light.jpg');
+   --Desktop: url('../assets/bg-desktop-light.jpg');
 }
 
 :root:has(.toggle[data-dark="true"]){
@@ -37,8 +37,8 @@
    --Focus: 192 100% 67%;
 
    /* ----- Images ----- */
-   --Mobile: url('../images/bg-mobile-dark.jpg');
-   --Desktop: url('../images/bg-desktop-dark.jpg');
+   --Mobile: url('../assets/bg-mobile-light.jpg');
+   --Desktop: url('../assets/bg-desktop-dark.jpg');
 }
 
 #root {
@@ -88,7 +88,7 @@ header{
    display: flex;
    align-items: center;
    justify-content: center;
-   background-image: url('../images/icon-moon.svg');
+   background-image: url('../assets/icon-moon.svg');
    background-size: contain;
    background-repeat: no-repeat;
    cursor: pointer;
@@ -97,10 +97,10 @@ header{
 
 .toggle[data-dark='true']{
    animation: spin 500ms ease-in-out;
-   background-image: url('../images/icon-sun.svg');
+   background-image: url('../assets/icon-sun.svg');
 }
 .toggle[data-dark='false']{
-   background-image: url('../images/icon-moon.svg');
+   background-image: url('../assets/icon-moon.svg');
    transform: rotate(-360deg);
 }
 
@@ -265,7 +265,7 @@ button:focus-visible {
 }
 
 .done:checked {
-   background: url('../images/icon-check.svg'),
+   background: url('../assets/icon-check.svg'),
       linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
    background-repeat: no-repeat;
    background-position: center;

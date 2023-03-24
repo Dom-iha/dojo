@@ -10,7 +10,7 @@ function Form(props) {
 
     const handleSubmit= (e) => {
         e.preventDefault();
-        if(!value){return}
+        if(value.trim().length === 0){return}
         // pass input value to <Main />
         props.addItem(value)
         setValue('')
