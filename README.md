@@ -1,1 +1,1 @@
-# This repository contains files from react courses I'm taking
+# Files for react-the-complete-guide course.
