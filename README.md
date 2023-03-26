@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![react-logo](./Tenzies/src/assets/react.svg)
+<img src="./Tenzies/src/assets/react.svg" alt="react-logo" width="200"/>
 
 </div>
 
