@@ -75,7 +75,7 @@ check out my other projects [here](https://https://github.com/Dom-iha/Practice)
 - [React](https://reactjs.org/) - JS library
 - [React Hooks](https://react.dev/reference/react)
 - For styles
-  - [Styled components](https://styled)
+  - [Styled components](https://styled-components.com/)
   - [Sass](https://sass-lang.com)
   - CSS modules
 
