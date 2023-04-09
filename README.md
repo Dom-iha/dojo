@@ -46,7 +46,7 @@ Check out my other projects [here](https://github.com/Dom-iha/Practice)
   - Learning the basics of useReducer.
   - using the Context API
 
-- `/login` :
+- `/ReactMeals` :
 
   - Demo food order app to reinforce what i learned  above
 
