@@ -24,19 +24,31 @@ Check out my other projects [here](https://github.com/Dom-iha/Practice)
 
 ### Content
 
-`/expense-app` :
+- `/expense-app` :
 
-- A thorough introduction to React.js (What is it and why would you use it?).
-- All the core basics: How React works, building components with React & building UIs with React.
-- Components, props & dynamic data binding.
-- Working with user events and state to create interactive applications.
-- A (thorough) look behind the scenes to understand how React works under the hood.
-- Detailed explanations on how to work with lists and conditional content.
-- Debugging React apps.
+  - A thorough introduction to React.js (What is it and why would you use it?).
+  - All the core basics: How React works, building components with React & building UIs with React.
+  - Components, props & dynamic data binding.
+  - Working with user events and state to create interactive applications.
+  - A (thorough) look behind the scenes to understand how React works under the hood.
+  - Detailed explanations on how to work with lists and conditional content.
+  - Debugging React apps.
 
-`/course-goal` :
+- `/course-goal` :
 
-- Simple demo app to implement the above.
+  - Simple demo app to implement the above.
+
+- `/login` :
+
+  - Advanced handling
+  - Working with "Fragments", "Portals"  & "Refs"
+  - Dealing with side effects
+  - Learning the basics of useReducer.
+  - using the Context API
+
+- `/login` :
+
+  - Demo food order app to reinforce what i learned  above
 
 <!-- - React Hooks (in-depth)!
 - Working with built-in Hooks and building custom Hooks
