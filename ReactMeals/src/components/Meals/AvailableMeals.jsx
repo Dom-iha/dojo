@@ -1,6 +1,6 @@
 import DUMMY_MEALS from "./dummy-meals";
 import classes from "./AvailableMeals.module.css";
-import Card from "../components/ui/Card";
+import Card from "../../components/ui/Card";
 import MealItem from "./MealItem/MealItem";
 
 function AvailableMeals(props) {
