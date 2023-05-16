@@ -48,11 +48,40 @@ Check out my other projects [here](https://github.com/Dom-iha/Practice)
 
 - `/ReactMeals` :
 
-  - Demo food order app to reinforce what i learned  above
+  - Demo food order app to reinforce what i learned above
+
+- `/custom-hooks` :
+
+  - Working with built-in Hooks and building custom Hooks
+  - learning to outsource logic to custom hooks to reduce repetition.
+
+- `/Fetch`  :
+  
+  - Sending Http requests & handling transitional states + responses.
+  - Practice fetching data from the [star wars api](https://swapi.dev).
+  - Intro to firebase & using the realtime database to send post requests.
+  - using custom hooks to fetch data
+
+- `/forms`  :
+  
+  - Handling forms and user input.
+  - validation.
+  - using custom hooks to validate forms with lots of input fields.
+
+- `/ReactMeals` :
+
+  - Updated :
+    - Moved the dummy_meals array to firebase.
+    - Added a loading spinner.
+    - Added a checkout form and validation after learning `forms` & `custom-hooks`.
+    - Send user and meal data to firebase.
+
+- `/route-basics` :
+
+  - Building multi page apps in SPA's
+  - Introduction to using [React Router](https://reactrouter.com/) and how it works.
 
 <!-- - React Hooks (in-depth)!
-- Working with built-in Hooks and building custom Hooks
-
 - Styling React apps with "Styled Components" and "CSS Modules"
 
 - Working with "Fragments" & "Portals"
@@ -60,10 +89,6 @@ Check out my other projects [here](https://github.com/Dom-iha/Practice)
 - Dealing with side effects
 
 - Class-based components and functional components
-
-- Sending Http requests & handling transitional states + responses
-
-- Handling forms and user input (incl. validation)
 
 - Redux & Redux Toolkit
 
@@ -90,6 +115,9 @@ Check out my other projects [here](https://github.com/Dom-iha/Practice)
   - [Styled components](https://styled-components.com/)
   - [Sass](https://sass-lang.com)
   - CSS modules
+- [react-router](https://reactrouter.com/) - For routing.
+- [firebase](https://firebase.google.com/) - For the backend.
+- [vite](https://vitejs.dev/) - build tool.
 
 ### Useful resources
 
@@ -101,18 +129,22 @@ Check out my other projects [here](https://github.com/Dom-iha/Practice)
 
 - The projects here use [vite](https://vitejs.dev/)
 
-To get started, Run the following command:
+To get started, download any of the files and Run the following command:
 
 ```bash
 with npm:
-  npm create vite@latest
+  npm install
 
 with yarn:
-  yarn create vite
+  yarn install
 ```
 
 Then, you can run the client:
 
 ```bash
 npm run dev
+```
+
+```bash
+yarn dev
 ```
