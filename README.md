@@ -1,4 +1,4 @@
-# Dojo
+# dojo
 
 <div align="center">
 
