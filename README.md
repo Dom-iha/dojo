@@ -8,7 +8,7 @@
 
 <br>
 
-<h2 align="center">I'm using this repository to learn react and to keep track of my progress. I will be adding more projects as I progress</h2>
+<h2 align="center">I'm using this repository to keep track of my progress while learning react and nodeJs. I will be adding more projects as I progress</h2>
 
 Check out my other projects [here](https://github.com/Dom-iha/Practice)
 
