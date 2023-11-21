@@ -15,19 +15,6 @@ exports.getProducts = (req, res, next) => {
    })
 };
 
-// exports.getProduct = (req, res, next) => {
-//    const prodId = req.params.productId;
-//    Product.findById(prodId, (product) => {
-//       res.render('shop/product-detail', {
-//          product: product,
-//          pageTitle: product.title,
-//          description: product.description,
-//          imageUrl: product.imageUrl,
-//          path: '/products',
-//       });
-//       console.log(product);
-//    });
-// };
 exports.getProduct = (req, res, next) => {
    const prodId = req.params.productId;
    Product.findById(prodId)
@@ -51,6 +38,9 @@ exports.getIndex = (req, res, next) => {
             pageTitle: 'Shop',
             path: '/',
       });
+   })
+   .catch(err => {
+      console.log(err);
    });
 };
 

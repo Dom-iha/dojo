@@ -51,15 +51,21 @@ exports.postEditProduct = (req, res, next) => {
    const updatedPrice = req.body.price;
    const updatedImageUrl = req.body.imageUrl;
    const updatedDesc = req.body.description;
-   const updatedProduct = new Product(
-      prodId,
+  
+   const product = new Product(
       updatedTitle,
-      updatedImageUrl,
+      updatedPrice,
       updatedDesc,
-      updatedPrice
+      updatedImageUrl,
+      prodId
    );
-   updatedProduct.save();
-   res.redirect('/admin/products');
+   product
+   .save()
+   .then(result => {
+      console.log('UPDATED PRODUCT!');
+      res.redirect('/admin/products');
+   })
+   .catch(err => console.log(err));
 };
 
 
@@ -77,8 +83,12 @@ exports.getProducts = (req, res, next) => {
    });   
 };
 
-// exports.postDeleteProduct = (req, res, next) => {
-//    const prodId = req.body.productId;
-//    Product.deleteById(prodId);
-//    res.redirect('/admin/products');
-// };
+exports.postDeleteProduct = (req, res, next) => {
+   const prodId = req.body.productId;
+   Product.deleteById(prodId)
+   .then(() => {
+      console.log('DESTROYED PRODUCT');
+      res.redirect('/admin/products');
+   })
+   .catch(err => console.log(err));
+};
